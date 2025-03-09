@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient Background */
+}
+
+/* Glassmorphism effect for the form */
+.dashboard-container {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.input-box {
+  width: calc(50% - 10px);
+  margin-bottom: 15px;
+}
+
+.input-box span.details {
+  display: block;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+  transition: 0.3s ease;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Button Styling */
+.center-button {
+  margin-top: 20px;
+}
+
+.button button,
+.check-button {
+  background: #ff7eb3;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.4s;
+  width: 100%;
+}
+
+.button button:hover,
+.check-button:hover {
+  background: #ff4e8d;
+  transform: translateY(-2px);
+}
+
+/* Check Status Button */
+.check-button-container {
+  margin-top: 15px;
+}
+
+.check-button {
+  background: #00c9a7;
+}
+
+.check-button:hover {
+  background: #00a88a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}

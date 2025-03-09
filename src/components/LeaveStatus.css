@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply styles only for the leave status page */
+.leave-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url('/assets/college.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leave-container {
+  max-width: 900px; /* Increased width */
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title{
+  color: black;
+}
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 14px 18px; /* Increased padding */
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #62686d;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+/* Space between columns */
+th:not(:last-child), td:not(:last-child) {
+  background-color: #f8f8f8;
+}
+
+/* Row hover effect */
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Approval Status styles */
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 6px 12px;
+  display: inline-block;
+}
+
+.status.pending {
+  background: rgba(88, 0, 230, 0.1);
+  margin-left: 25px;
+  margin-top: 18px;
+  color: rgb(88, 0, 230);
+}
+
+.status.approved {
+  background: rgba(0, 128, 0, 0.1);
+  margin-left: 25px;
+  margin-top: 18px;
+  color: green;
+}
+
+.status.rejected {
+  background: rgba(255, 0, 0, 0.1);
+  margin-left: 25px;
+  margin-top: 18px;
+  color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .leave-container {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
