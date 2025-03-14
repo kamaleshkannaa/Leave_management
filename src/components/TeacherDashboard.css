@@ -7,8 +7,8 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Apply styles only for the leave status page */
-.leave-status-page {
+/* Page styling */
+.dashboard-page {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -19,25 +19,26 @@
   background-repeat: no-repeat;
 }
 
-.leave-status-container {
-  max-width: 900px;
+/* Container */
+.leave-container {
+  max-width: 1000px; /* Adjusted width */
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9); /* Light transparent effect */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
-h2 {
-  font-size: xx-large;
-  color: black;
+/* Title */
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-/* Table styling */
+/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -50,7 +51,6 @@ table {
 
 th, td {
   padding: 14px 18px;
-  color: black;
   text-align: center;
   font-size: 16px;
   border-bottom: 1px solid #ddd;
@@ -62,56 +62,60 @@ th {
   font-weight: 600;
 }
 
-/* Space between columns */
-th:not(:last-child), td:not(:last-child) {
-  background-color: #f8f8f8;
-}
-
 /* Row hover effect */
 tr:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Approval Status styles */
-.status-pending {
+/* Status Styling */
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 6px 12px;
+  display: inline-block;
+  min-width: 100px; /* Ensure alignment */
+  text-align: center;
+}
+
+.status.pending {
   background: rgba(88, 0, 230, 0.1);
   color: rgb(88, 0, 230);
-  padding-left: 50px;
-  margin-left: 20px;
-  margin-top: 10px;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 6px 12px;
-  display: inline-block;
 }
 
-.status-approved {
+.status.approved {
   background: rgba(0, 128, 0, 0.1);
   color: green;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 6px 12px;
-  display: inline-block;
 }
 
-.status-rejected {
+.status.rejected {
   background: rgba(255, 0, 0, 0.1);
   color: red;
-  font-weight: bold;
+}
+
+/* Ensure Actions Column is Balanced */
+td:last-child {
+  text-align: center;
+  min-width: 120px;
+}
+
+button.approve-btn,
+button.reject-btn {
+  padding: 6px 10px;
+  margin: 4px;
+  border: none;
   border-radius: 5px;
-  padding: 6px 12px;
-  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .leave-status-container {
-    max-width: 90%;
-    padding: 20px;
-  }
-
-  th, td {
-    font-size: 14px;
-    padding: 10px;
-  }
+button.approve-btn {
+  background-color: green;
+  color: white;
 }
+
+button.reject-btn {
+  background-color: red;
+  color: white;
+}
+
