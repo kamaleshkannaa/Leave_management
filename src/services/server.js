@@ -199,7 +199,9 @@ const PORT = process.env.PORT || 5000;
 
 // ✅ Middleware
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" })); // Allow frontend requests
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:5173"] }));
+ // Change this based on your frontend port
+ // Allow frontend requests
 
 // ✅ Register API Routes
 app.use("/api/leave", leaveRoutes);
@@ -207,9 +209,10 @@ app.use("/api/leave", leaveRoutes);
 // ✅ Debug: List all registered routes
 app._router.stack.forEach((r) => {
   if (r.route && r.route.path) {
-    console.log(`${Object.keys(r.route.methods)[0].toUpperCase()} ${r.route.path}`);
+    console.log(`🔗 ${Object.keys(r.route.methods)[0].toUpperCase()} ${r.route.path}`);
   }
 });
+
 
 // ✅ MongoDB Connection
 mongoose

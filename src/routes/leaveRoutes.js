@@ -60,6 +60,17 @@ router.get("/status/:uid", async (req, res) => {
     res.status(500).json({ error: "Error fetching student leave requests" });
   }
 });
+router.post("/apply", async (req, res) => {
+  try {
+    const newLeave = new Leave(req.body);
+    await newLeave.save();
+    res.status(201).json({ message: "Leave applied successfully!" });
+  } catch (error) {
+    console.error("❌ Error applying leave:", error);
+    res.status(500).json({ message: "Server error. Try again later." });
+  }
+});
+
 
 // ✅ Update leave status (NEW: for teacher approval/rejection)
 router.put("/:id", async (req, res) => {
